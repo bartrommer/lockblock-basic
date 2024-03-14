@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Appointment Scheduler</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Balloon Popup -->
+        <div class="balloon">
+            <img src="../public/lock_block_logo.png" alt="System Logo" class="system-logo">
+            <div class="question">Please choose available hours:</div>
+            <div class="time-buttons">
+                <!-- Time buttons from 9:00 to 18:00 -->
+                <button class="hour">9:00 AM</button>
+                <button class="hour">10:00 AM</button>
+                <button class="hour">11:00 AM</button>
+                <button class="hour">12:00 PM</button>
+                <button class="hour">1:00 PM</button>
+                <button class="hour">2:00 PM</button>
+                <button class="hour">3:00 PM</button>
+                <button class="hour">4:00 PM</button>
+            </div>
+        </div>
+
+        <!-- Appointment Details Popup (Hidden by default) -->
+        <div id="appointment-details" class="hidden">
+            <h3>Appointment Details:</h3>
+            <p>You have selected:</p>
+            <p id="selected-time"></p>
+            <p id="business-name"></p>
+        </div>
+    </div>
+</body>
+</html>
+

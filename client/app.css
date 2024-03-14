@@ -1,0 +1,61 @@
+
+.container {
+    position: relative;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.balloon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.system-logo {
+    width: 100px; /* Adjust size as needed */
+    margin-top: 50px; /* Half of the logo height */
+}
+
+.question {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.time-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.hour {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hour:hover {
+    background-color: #45a049;
+}
+
+#appointment-details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}

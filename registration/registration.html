@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create User - LockBlock System</title>
+  <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="../public/lock_block_logo.png" alt="LockBlock Logo">
+      <h2>LockBlock System</h2>
+    </div>
+    <h3>Create User</h3>
+    <form id="createUserForm">
+      <div class="form-group">
+        <label for="occupation">What is your occupation?</label>
+        <input type="text" id="occupation" name="occupation" required>
+      </div>
+      <div class="form-group">
+        <label for="workingDays">On which days do you not work?</label><br>
+        <button type="button" class="dayButton" data-day="Sunday">Sunday</button>
+        <button type="button" class="dayButton" data-day="Monday">Monday</button>
+        <button type="button" class="dayButton" data-day="Tuesday">Tuesday</button>
+        <button type="button" class="dayButton" data-day="Wednesday">Wednesday</button>
+        <button type="button" class="dayButton" data-day="Thursday">Thursday</button>
+        <button type="button" class="dayButton" data-day="Friday">Friday</button>
+        <button type="button" class="dayButton" data-day="Saturday">Saturday</button>
+      </div>
+      <div class="form-group">
+        <label for="workingHours">How many hours do you work per day?</label>
+        <select id="workingHours" name="workingHours">
+          <option value="4">4 hours</option>
+          <option value="6">6 hours</option>
+          <option value="8">8 hours</option>
+          <!-- Add more options if needed -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="waitTime">How long is the wait at your place?</label><br>
+        <button type="button" class="waitButton" data-time="30">30 minutes</button>
+        <button type="button" class="waitButton" data-time="45">45 minutes</button>
+        <button type="button" class="waitButton" data-time="60">1 hour</button>
+      </div>
+      <button id="createUserButton"type="submit">Create User</button>
+    </form>
+  </div>
+
+  <script>
+    // Add event listeners for day buttons
+    document.querySelectorAll(".dayButton").forEach(function(button) {
+      button.addEventListener("click", function() {
+        button.classList.toggle("selected");
+      });
+    });
+
+    // Add event listeners for wait time buttons
+    document.querySelectorAll(".waitButton").forEach(function(button) {
+      button.addEventListener("click", function() {
+        document.querySelectorAll(".waitButton").forEach(function(btn) {
+          btn.classList.remove("selected");
+        });
+        button.classList.add("selected");
+      });
+    });
+
+    // Form submission handling
+    document.getElementById("createUserForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      // Perform form validation and submission here
+      // For demonstration, just console log the inputs
+      let occupation = document.getElementById("occupation").value;
+      let selectedDays = [];
+      document.querySelectorAll(".dayButton.selected").forEach(function(button) {
+        selectedDays.push(button.dataset.day);
+      });
+      let workingHours = document.getElementById("workingHours").value;
+      let waitTime = document.querySelector(".waitButton.selected").dataset.time;
+      console.log("Occupation:", occupation);
+      console.log("Days off:", selectedDays.join(", "));
+      console.log("Working hours per day:", workingHours);
+      console.log("Wait time:", waitTime + " minutes");
+      window.location.href = "manager_page.html"
+    });
+  </script>
+
+</body>
+</html>
